@@ -37,5 +37,19 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
+
+int main(){
+    float saldo = 0.00, salario, first, second;
+
+    ifstream arquivo ("entrada.txt");
+    arquivo >> salario >> first >> second;
+
+    saldo = salario - (first + second) - (first + second )* 0.0038;
+
+    cout << fixed << setprecision(2) << saldo << endl;
+
+    return 0;
+}
