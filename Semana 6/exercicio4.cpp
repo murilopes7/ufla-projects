@@ -42,18 +42,27 @@ Exemplo de Saída:
 
 #include <iostream>
 #include <iomanip>
-#include <fstream>
 using namespace std;
 
 float inclinacaoFunction(int altura, int base)
 {
-    return (float)altura * 100 / base;
+    // Validação para evitar divisão por zero
+    if (base <= 0) {
+        return 0.0;
+    }
+    return (float)altura * 100.0 / base;
 }
 
 int main()
 {
     int quantidade;
     cin >> quantidade;
+    
+    // Validação da quantidade
+    if (quantidade <= 0) {
+        cout << "0" << endl;
+        return 0;
+    }
     
     int h, b;
     float inclinacao;
@@ -64,9 +73,12 @@ int main()
         cin >> h >> b;
         inclinacao = inclinacaoFunction(h, b);
         
-        if (inclinacao <= 8.0) 
+        // Verificação se a inclinação é adequada (≤ 8%)
+        if (inclinacao <= 8.0) {
             contador++;
+        }
         
+        // Saída formatada com 1 casa decimal
         cout << fixed << setprecision(1) << inclinacao << endl;
     }
     
