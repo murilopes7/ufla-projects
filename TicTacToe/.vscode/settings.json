@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.html": "html",
-        "*.txt": "plaintext",
-        "*.jsx": "javascriptreact",
-        "ostream": "cpp",
-        "iostream": "cpp"
-    }
-}
